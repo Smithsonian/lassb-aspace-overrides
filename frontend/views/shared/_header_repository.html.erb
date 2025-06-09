@@ -157,7 +157,9 @@
                     <% end %>
                     <% if user_can?('create_job') %>
                         <li><%= link_to t("job._plural"), {:controller => :jobs, :action => :index}, :class => "dropdown-item" %></li>
+                        <%# SI Override - Use local import templates %>
                         <li><%= link_to t("bulk_import.templates"), "https://confluence.si.edu/pages/viewpage.action?spaceKey=LAS&title=Import+Templates", :target => "_blank", :class => "dropdown-item"  %></li>
+                        <%# End SI Override %>
                       <li class="dropdown-divider"></li>
                     <% end %>
 
