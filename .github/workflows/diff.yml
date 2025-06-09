@@ -1,0 +1,17 @@
+name: Diff modified views
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'frontend/views/**'
+  push:
+    paths:
+      - 'frontend/views/**'
+
+jobs:
+  diff:
+    uses: Smithsonian/caas-aspace-services/.github/workflows/diff.yml@main
+    with:
+      prod_archivesspace_version: v4.1.0
