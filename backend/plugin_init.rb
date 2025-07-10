@@ -1,6 +1,6 @@
 MarcXMLAuthAgentBaseMap.module_eval do
 
-    def BASE_RECORD_MAP(opts = {:import_events => false, :import_subjects => false})
+  def BASE_RECORD_MAP(opts = {:import_events => false, :import_subjects => false})
     import_events   = opts[:import_events]
     import_subjects = false # SI override. Never import subjects.
 
