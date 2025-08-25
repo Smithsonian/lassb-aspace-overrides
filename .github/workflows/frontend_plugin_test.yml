@@ -51,10 +51,16 @@ jobs:
         backend: 'true'
         frontend: 'true'
         indexer: 'true'
+      
+    - name: Setup firefox
+      id: setup-firefox
+      uses: browser-actions/setup-firefox@v1
+      with:
+        firefox-version: 'latest'
 
     - name: Run Frontend plugin tests
       run: |
-        ./build/run frontend:test -Dpattern="../../plugins/${{ github.event.repository.name }}/frontend/spec/*"
+        ./build/run frontend:test -Dpattern="../../plugins/${{ github.event.repository.name }}/frontend/spec/features/*"
 
     - uses: actions/upload-artifact@v4
       if: failure()
